@@ -29,7 +29,7 @@ This repository contains a data analysis case study focused on understanding and
 - **`output/`**: Generated plots and results.
 
 ## Analysis Workflow
-### Data Preparation
+### 1 Data Preparation
 Cleaning the raw dataset (hospital_data.csv)
 
 **SQL**:  
@@ -44,10 +44,25 @@ Cleaning the raw dataset (hospital_data.csv)
 2. Converts time columns to hms objects using hms::as_hms() and calculates Wait_Time_Minutes using difftime.
 3. Saves the final dataset as cleaned_data.rds in ../data/.
 
-### Exploratory Analysis
-Computes statistical summaries and identifies patterns in the data. (e.g. average wait times by hour)
+### 2 Exploratory Analysis
+Computes statistical summaries and identifies patterns in the data. (e.g., average wait times by hour)
 
 **SQL**:
-1. Calculate wait time by DoctorType
-  [Calculate wait time by DoctorType.pdf](https://github.com/user-attachments/files/19217640/Calculate.wait.time.by.DoctorType.pdf)
-2. 
+1. Wait time by Type of Doctor:
+  [Query Result](https://github.com/user-attachments/files/19217640/Calculate.wait.time.by.DoctorType.pdf)
+2. Wait time by hour of the entry time:
+  [Query Result](https://github.com/user-attachments/files/19217700/Wait.time.by.hour.of.EntryTime.pdf)
+
+**R**
+1. Loads cleaned_data.rds and computes summaries, adjusting for the fact that EntryTime is in seconds.
+
+### 3 Visualizations
+Generates plots to visualize wait time distributions, trends, and relationships, saved in the output/ directory
+**Tools**: R (r/visualizations.R) using ggplot2
+- Loads intermediate datasets (cleaned_data.rds, wait_by_hour.rds, patient_volume.rds) and generates plots.
+
+### 4 Outputs
+- **wait_time_dist.png**: Distribution of wait times.
+- **wait_by_hour.png**: Wait times by hour of entry.
+- **wait_by_doctor.png**: Wait times by doctor type.
+- **volume_vs_wait.png**: Patient volume vs. wait time.
