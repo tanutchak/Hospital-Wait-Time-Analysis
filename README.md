@@ -27,3 +27,27 @@ This repository contains a data analysis case study focused on understanding and
 - **`sql/`**: SQL scripts for data manipulation and query results.
 - **`r/`**: R scripts for analysis and visualization.
 - **`output/`**: Generated plots and results.
+
+## Analysis Workflow
+### Data Preparation
+Cleaning the raw dataset (hospital_data.csv)
+
+**SQL**:  
+
+1. Load the hospital_data.csv into a database table using **SQLite**.
+2. Clean the data by removing rows with invalid or missing EntryTime and PostConsultationTime.
+3. Export the cleaned data as a CSV file for use in R
+
+**R**:
+
+1. Loads the cleaned CSV
+2. Converts time columns to hms objects using hms::as_hms() and calculates Wait_Time_Minutes using difftime.
+3. Saves the final dataset as cleaned_data.rds in ../data/.
+
+### Exploratory Analysis
+Computes statistical summaries and identifies patterns in the data. (e.g. average wait times by hour)
+
+**SQL**:
+1. Calculate wait time by DoctorType
+  [Calculate wait time by DoctorType.pdf](https://github.com/user-attachments/files/19217640/Calculate.wait.time.by.DoctorType.pdf)
+2. 
