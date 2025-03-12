@@ -74,18 +74,23 @@
 - Patient volume is a significant driver of wait times, as expected—more patients lead to longer waits due to limited resources (e.g., doctors, rooms).
 - The variability suggests that other factors (e.g., staffing levels, appointment scheduling, or patient complexity) also play a role in wait times beyond just volume.
 
+### **SQL Query**
+1. Wait time by Type of Doctor:
+  [Query Result](https://github.com/user-attachments/files/19217640/Calculate.wait.time.by.DoctorType.pdf)
+2. Wait time by hour of the entry time:
+  [Query Result](https://github.com/user-attachments/files/19217700/Wait.time.by.hour.of.EntryTime.pdf)
+
 ## Key Findings
 
-### **Average Wait Time**:
-- From the Wait Time Summary provided earlier, the average wait time is 38.91 minutes.
+### **Average Wait Time**: 38.91 minutes (median: 26.33 minutes)
 - This aligns with the histogram, where most wait times are under 50 minutes, but outliers pull the mean higher.
 
-### **Peak Delay Hours**:
-- The peak delay hours are 9 AM (~50 minutes) and 17 PM (~45 minutes), as seen in the "Average Wait Time by Hour of Entry" plot.
+### **Peak Delay Hours**: 9 AM (~50 minutes) and 17 PM (~45 minutes)
 - These hours likely correspond to high patient arrival times, such as morning appointments and late afternoon visits.
 
-### **Doctor Types with Longest Waits**:
-- There is no significant difference in median wait times across doctor types. However, FLOATING doctors have a slightly higher median wait time (~30 minutes) compared to ANCHOR (~25 minutes) and LOCUM (~20 minutes).
+### **Doctor Types with Longest Waits**: FLOATING doctors (~30 minutes median)
+- While ANCHOR (~25 minutes) and LOCUM (~20 minutes)
+- There is no significant difference in median wait times across doctor types.
 - All doctor types experience extreme delays (outliers up to 600 minutes), indicating that the issue is systemic rather than specific to a doctor type.
 
 ## Addressing the Main Objective of the Case Study
@@ -98,9 +103,30 @@
 
    **ANSWER**: High patient volume leads to longer wait times, with averages reaching 60 minutes when patient numbers exceed 400. Peak delays occur at 9 AM and 5 PM, likely due to high patient arrivals. Systemic delays affect all doctor types, indicating hospital-wide operational challenges rather than doctor-specific issues. Extreme outliers, with wait times up to 733.33 minutes (~12 hours), suggest potential failures like emergency cases, scheduling errors, or staffing shortages.
 
-Insights and Recommendations for Improvement
-Insights:
-Patient Volume Drives Delays: The strong correlation between patient volume and wait time highlights that resource constraints (e.g., doctors, rooms) are a primary bottleneck during high-traffic periods.
-Peak Hours Indicate Scheduling Issues: The peaks at 9 AM and 17 PM suggest that appointment scheduling or patient arrivals are concentrated during these times, leading to longer waits.
-Systemic Issues Across Doctor Types: The lack of significant difference in wait times across doctor types indicates that the issue lies in hospital-wide processes rather than specific doctor performance.
-Outliers Signal Operational Failures: Extreme wait times (up to 12 hours) point to specific cases where the system fails, possibly due to emergency patients, no-shows, or overbooking.
+## Insights and Recommendations for Improvement
+
+### **Insights**
+- **Patient Volume Drives Delays**: The strong correlation between patient volume and wait time highlights that resource constraints (e.g., doctors, rooms) are a primary bottleneck during high-traffic periods.
+- **Peak Hours Indicate Scheduling Issues**: The peaks at 9 AM and 17 PM suggest that appointment scheduling or patient arrivals are concentrated during these times, leading to longer waits.
+- **Systemic Issues Across Doctor Types**: The lack of significant difference in wait times across doctor types indicates that the issue lies in hospital-wide processes rather than specific doctor performance.
+- **Outliers Signal Operational Failures**: Extreme wait times (up to 12 hours) point to specific cases where the system fails, possibly due to emergency patients, no-shows, or overbooking.
+
+### **Recommendations**
+1. **Optimize Appointment Scheduling**:
+    
+    - **Spread Out Appointments**: Distribute appointments more evenly throughout the day to avoid peaks at 9 AM and 17 PM. For example, encourage patients to book mid-morning or early afternoon slots (e.g., 11 AM to 14 PM), where wait times are lower.
+    - **Spread-Out Arrival Times**: Spread out patient arrivals (e.g., 9:00, 9:10, 9:20) instead of scheduling many at once to reduce congestion.
+2. **Increase Staffing During Peak Hours**:
+
+    - **Add Temporary Staff**: Deploy additional doctors, nurses, or support staff during peak hours (8-10 AM and 4-6 PM) to handle higher patient volumes.
+    - **Use FLOATING Doctors Strategically**: Since FLOATING doctors have slightly higher wait times, consider assigning them to less busy periods or pairing them with additional support staff during peak hours.
+
+3. **Address Outliers and Extreme Delays**:
+
+    - **Identify Causes of Outliers**: Investigate cases with wait times exceeding 400 minutes. These could be due to emergency cases, no-shows, or overbooking. Implement a system to flag and manage them (e.g., prioritize emergencies without delaying scheduled patients).
+    - **Improve Patient Screening**: Streamline assessment to assign patients to the right doctor or department, minimizing delays.
+
+4. **Leverage Data for Resource Allocation**:
+
+    - **Predictive Modeling**: Use historical data to predict high-volume days or hours and adjust staffing accordingly.
+    - **Dynamic Scheduling**: Implement a dynamic scheduling system that adjusts appointment slots based on real-time patient volume and wait times.
