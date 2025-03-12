@@ -48,10 +48,7 @@ Cleaning the raw dataset (hospital_data.csv)
 Computes statistical summaries and identifies patterns in the data. (e.g., average wait times by hour)
 
 **SQL**:
-1. Wait time by Type of Doctor:
-  [Query Result](https://github.com/user-attachments/files/19217640/Calculate.wait.time.by.DoctorType.pdf)
-2. Wait time by hour of the entry time:
-  [Query Result](https://github.com/user-attachments/files/19217700/Wait.time.by.hour.of.EntryTime.pdf)
+1. After cleaning the CSV file, write queries to retrieve the analysis results.
 
 **R**
 1. Loads cleaned_data.rds and computes summaries, adjusting for the fact that EntryTime is in seconds.
