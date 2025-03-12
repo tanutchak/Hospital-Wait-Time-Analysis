@@ -15,6 +15,13 @@ This repository contains a data analysis case study focused on understanding and
   - `LabCost`: Cost of lab tests
   - `ConsultationRevenue`: Revenue from consultations
   - `DoctorType`: Type of doctor
+
+    **FLOATING** = A doctor who works in different departments as needed
+
+    **ANCHOR** = A doctor who is permanently assigned to a specific departmenะ
+
+    **LOCUM** = A temporary doctor who fills in for another doctor on leave
+    
   - `FinancialClass`: Patient financial category
   - `PatientType`: Type of patient (e.g., OUTPATIENT)
   - `EntryTime`: Time patient enters the hospital
