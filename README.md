@@ -9,5 +9,21 @@ This repository contains a data analysis case study focused on understanding and
 
 ## Dataset  
 - **Source**: [Hospital Patient Data on Kaggle](https://www.kaggle.com/datasets/abdulqaderasiirii/hospital-patient-data)  
-- **Key Columns**: `Date`, `Entry Time`, `Post-Consultation Time`, `Completion Time`, `Doctor Type`, `Financial Class`, `Patient ID`.  
-- **Note**: The dataset is not included in this repository due to size/license constraints. Download it from Kaggle and place it in the `data/` folder as `hospital_patient_data.csv`.
+- **Key Columns**:
+  - `Date`: Day of patient visit
+  - `MedicationRevenue`: Revenue from medication
+  - `LabCost`: Cost of lab tests
+  - `ConsultationRevenue`: Revenue from consultations
+  - `DoctorType`: Type of doctor
+  - `FinancialClass`: Patient financial category
+  - `PatientType`: Type of patient (e.g., OUTPATIENT)
+  - `EntryTime`: Time patient enters the hospital
+  - `PostConsultationTime`: Time patient enters the clinic room
+  - `CompletionTime`: Time patient exits
+  - `PatientID`: Unique patient identifier
+
+## Repository Structure
+- **`data/`**: Placeholder for the dataset (download from Kaggle).
+- **`sql/`**: SQL scripts for data manipulation.
+- **`r/`**: R scripts for analysis and visualization.
+- **`output/`**: Generated plots and results.
