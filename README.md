@@ -70,3 +70,22 @@ Generates plots to visualize wait time distributions, trends, and relationships,
 - **wait_by_hour.png**: Wait times by hour of entry.
 - **wait_by_doctor.png**: Wait times by doctor type.
 - **volume_vs_wait.png**: Patient volume vs. wait time.
+
+## Integration of SQL and R
+
+**Why Use SQL?**:
+
+- SQL excels at handling large datasets, performing complex queries, and filtering data efficiently, which reduces the load on R.
+- It allows for initial data cleaning and summarization directly in the database, making the R scripts more focused on analysis and visualization.
+
+**Workflow Synergy**:
+
+- **SQL** preprocesses the data (e.g., removing invalid entries, calculating wait times) and exports it as CSV files.
+- **R** takes these preprocessed files, performs advanced statistical analysis, and generates visualizations, leveraging its strengths in data manipulation and plotting.
+
+**Example Pipeline**:
+1. Run sql/data_preprocessing.sql to clean data and save as cleaned_data_sql.csv.
+2. Run sql/exploratory_analysis.sql to generate preliminary summaries (e.g., wait_by_hour_sql.csv).
+3. Run r/data_preparation.R to load and refine the data into cleaned_data.rds.
+4. Run r/analysis.R to compute final statistics and save intermediate datasets.
+5. Run r/visualizations.R to create and save plots in output/.
