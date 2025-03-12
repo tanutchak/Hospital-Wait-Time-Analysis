@@ -1,0 +1,1 @@
+R -e "install.packages(c('dplyr', 'lubridate', 'ggplot2', 'readr', 'hms'), repos='http://cran.rstudio.com/')"
