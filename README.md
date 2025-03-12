@@ -1,4 +1,4 @@
-# Optimizing Patient Wait Times: Analyzing Pre-Consultation Delays in Outpatient Hospital Operations
+# Optimizing Patient Wait Times: Analyzing Pre-Consultation Delays in Outpatient Hospital Operations using SQL and R
 
 ## Overview  
 This repository contains a data analysis case study focused on understanding and optimizing patient wait times in an outpatient hospital setting. Using the [Hospital Patient Data](https://www.kaggle.com/datasets/abdulqaderasiirii/hospital-patient-data) dataset, we analyze the typical duration between `Entry Time` and `Post-Consultation Time` and identify potential bottlenecks in the pre-consultation process.
